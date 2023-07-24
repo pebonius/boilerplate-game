@@ -12,30 +12,28 @@
     "posY": 0,
     "sprite": "pc"
   },
-  "variables": [
-    { "name": "introPlayed", "value": false }
-  ],
+  "variables": [{ "name": "introPlayed", "value": false }],
   "maps": [
     {
-      "name": "map",
+      "name": "map1",
       "walkableTiles": [0],
       "tiles": [
         [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-        [1, 1, 1, 0, 1, 0, 0, 0, 0, 0],
+        [1, 1, 0, 0, 1, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+        [0, 0, 1, 0, 1, 0, 1, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 1, 0, 1, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 1, 0, 1, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       ],
       "events": [
         {
           "name": "intro",
-          "posX": 3,
-          "posY": 1,
+          "posX": 1,
+          "posY": 0,
           "sprite": "",
           "condition": "variableValueIs",
           "conditionArgs": ["introPlayed", false],
@@ -47,18 +45,45 @@
             {
               "name": "playDialogue",
               "arguments": [
-                [
-                  "what a magnificent place",
-                  "the <<TREES>>(?) are so majestic"
-                ]
+                ["what a magnificent place", "the <<TREES>>(?) are so majestic"]
               ]
             }
           ]
         },
         {
-          "name": "secret tree",
-          "posX": 2,
-          "posY": 4,
+          "name": "goto_map2",
+          "posX": 4,
+          "posY": 9,
+          "sprite": null,
+          "actions": [
+            {
+              "name": "movePlayer",
+              "arguments": [4, 0, 1]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "map2",
+      "walkableTiles": [0],
+      "tiles": [
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      ],
+      "events": [
+        {
+          "name": "tree",
+          "posX": 4,
+          "posY": 5,
           "sprite": "1",
           "actions": [
             {

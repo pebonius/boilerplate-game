@@ -15,6 +15,7 @@ import LoadingScreen from "./gameStates/loadingScreen.js";
 export default class Game {
   constructor(canvas) {
     this.canvas = canvas;
+    this.scaleCanvas();
     this.content = new ContentManager();
     this.sound = new SoundManager();
     this.credits = new CreditsManager();
@@ -99,7 +100,6 @@ export default class Game {
     this.context.imageSmoothingEnabled = false;
   }
   initialize() {
-    this.scaleCanvas();
     this.credits.tryFetchCredits("./CREDITS.txt");
     this.input.addEvents();
     this.input.addKeys();
@@ -127,6 +127,7 @@ export default class Game {
   draw() {
     clearContext(this.context, this.canvas);
     lastElementInArray(this.gameStates).draw(this.context, this.canvas);
+    this.input.draw(this.context);
   }
   gameLoop(self) {
     self.update();

@@ -1,6 +1,7 @@
 import Point from "../geometry/point.js";
 import { drawRectangle, drawText } from "../utilities/graphics.js";
 import Debug from "../utilities/debug.js";
+import Rectangle from "../geometry/rectangle.js";
 
 export default class ControlButtons {
   constructor(canvas) {
@@ -16,20 +17,29 @@ export default class ControlButtons {
       this.arrowsPosition.y - this.buttonSize.y * 1.5
     );
 
+    this.upArrowRect = new Rectangle(this.upArrowPos, this.buttonSize);
+    Debug.log(this.upArrowRect.position.x);
+
     this.downArrowPos = new Point(
       this.arrowsPosition.x - this.buttonSize.x * 0.5,
       this.arrowsPosition.y + this.buttonSize.y * 0.5
     );
+
+    this.downArrowRect = new Rectangle(this.downArrowPos, this.buttonSize);
 
     this.leftArrowPos = new Point(
       this.arrowsPosition.x - this.buttonSize.x * 1.5,
       this.arrowsPosition.y - this.buttonSize.y * 0.5
     );
 
+    this.leftArrowRect = new Rectangle(this.leftArrowPos, this.buttonSize);
+
     this.rightArrowPos = new Point(
       this.arrowsPosition.x + this.buttonSize.x * 0.5,
       this.arrowsPosition.y - this.buttonSize.y * 0.5
     );
+
+    this.rightArrowRect = new Rectangle(this.rightArrowPos, this.buttonSize);
   }
   draw(context) {
     drawRectangle(context, this.arrowsPosition, new Point(1, 1), "red");

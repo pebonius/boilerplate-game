@@ -156,14 +156,20 @@ export default class InputManager {
       const bounds = this.canvas.getBoundingClientRect();
       const x = e.clientX - bounds.left;
       const y = e.clientY - bounds.top;
+      const clickPos = new Point(x, y);
 
-      if (x < this.canvas.width / 4) {
+      const upArrowRect = this.controlButtons.upArrowRect;
+      const downArrowRect = this.controlButtons.downArrowRect;
+      const leftArrowRect = this.controlButtons.leftArrowRect;
+      const rightArrowRect = this.controlButtons.rightArrowRect;
+
+      if (leftArrowRect.contains(clickPos)) {
         this.leftclick = true;
-      } else if (x > (this.canvas.width / 4) * 3) {
+      } else if (rightArrowRect.contains(clickPos)) {
         this.rightclick = true;
-      } else if (y < this.canvas.height / 4) {
+      } else if (upArrowRect.contains(clickPos)) {
         this.upclick = true;
-      } else if (y > (this.canvas.height / 4) * 3) {
+      } else if (downArrowRect.contains(clickPos)) {
         this.downclick = true;
       }
     });

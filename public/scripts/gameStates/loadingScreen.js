@@ -43,7 +43,7 @@ export default class LoadingScreen extends GameState {
   update(input) {
     if (
       this.loadingFinished &&
-      (input.isKeyPressed(input.keys.ENTER) || input.isClick())
+      (input.isKeyPressed(input.keys.ENTER) || input.isEnterClick())
     ) {
       this.showWelcomeScreen();
     }

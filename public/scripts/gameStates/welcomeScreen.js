@@ -24,7 +24,7 @@ export default class WelcomeScreen extends GameState {
     this.addBackgroundImage();
     this.addTitle();
     this.addControlLabel("enter", "start game");
-    this.addControlLabel("a", "about");
+    this.addControlLabel("down", "about");
     this.playMenuMusic();
   }
   playMenuMusic() {
@@ -89,10 +89,10 @@ export default class WelcomeScreen extends GameState {
     );
   }
   update(input) {
-    if (input.isKeyPressed(input.keys.ENTER) || input.isClick()) {
+    if (input.isKeyPressed(input.keys.ENTER) || input.isEnterClick()) {
       this.startGame();
     }
-    if (input.isKeyPressed(input.keys.A)) {
+    if (input.isKeyPressed(input.keys.DOWN) || input.isDownClick()) {
       this.openAbout();
     }
   }

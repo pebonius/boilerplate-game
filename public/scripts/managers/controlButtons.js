@@ -40,15 +40,22 @@ export default class ControlButtons {
     );
 
     this.rightArrowRect = new Rectangle(this.rightArrowPos, this.buttonSize);
+
+    this.enterPos = new Point(
+      canvas.width - this.buttonSize.x * 2.5,
+      this.arrowsPosition.y - this.buttonSize.y * 0.5
+    );
+    this.enterRect = new Rectangle(this.enterPos, this.buttonSize);
   }
   draw(context) {
     drawRectangle(context, this.arrowsPosition, new Point(1, 1), "red");
-    this.drawArrow(context, this.upArrowPos, "^");
-    this.drawArrow(context, this.downArrowPos, "v");
-    this.drawArrow(context, this.leftArrowPos, "<");
-    this.drawArrow(context, this.rightArrowPos, ">");
+    this.drawButton(context, this.upArrowPos, "^");
+    this.drawButton(context, this.downArrowPos, "v");
+    this.drawButton(context, this.leftArrowPos, "<");
+    this.drawButton(context, this.rightArrowPos, ">");
+    this.drawButton(context, this.enterPos, "⏎");
   }
-  drawArrow(context, position, text) {
+  drawButton(context, position, text) {
     drawRectangle(context, position, this.buttonSize, this.arrrowBgColor);
     drawText(
       context,

@@ -162,15 +162,18 @@ export default class InputManager {
       const downArrowRect = this.controlButtons.downArrowRect;
       const leftArrowRect = this.controlButtons.leftArrowRect;
       const rightArrowRect = this.controlButtons.rightArrowRect;
+      const enterRect = this.controlButtons.enterRect;
 
-      if (leftArrowRect.contains(clickPos)) {
-        this.leftclick = true;
-      } else if (rightArrowRect.contains(clickPos)) {
-        this.rightclick = true;
-      } else if (upArrowRect.contains(clickPos)) {
+      if (upArrowRect.contains(clickPos)) {
         this.upclick = true;
       } else if (downArrowRect.contains(clickPos)) {
         this.downclick = true;
+      } else if (leftArrowRect.contains(clickPos)) {
+        this.leftclick = true;
+      } else if (rightArrowRect.contains(clickPos)) {
+        this.rightclick = true;
+      } else if (enterRect.contains(clickPos)) {
+        this.enterclick = true;
       }
     });
     this.canvas.addEventListener("pointerup", (e) => {
@@ -206,6 +209,12 @@ export default class InputManager {
   isRightClick() {
     const click = this.rightclick;
     this.rightclick = false;
+    this.isclick = false;
+    return click;
+  }
+  isEnterClick() {
+    const click = this.enterclick;
+    this.enterclick = false;
     this.isclick = false;
     return click;
   }

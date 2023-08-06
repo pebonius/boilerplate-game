@@ -3,8 +3,8 @@ import { clamp } from "../utilities/utilities.js";
 
 export default class SoundManager {
   constructor() {
-    this.sfxVolume = 0.0;
-    this.musicVolume = 0.3;
+    this.sfxVolume = 0.5;
+    this.musicVolume = 0.5;
     this.currentMusic = null;
   }
   get currentMusic() {

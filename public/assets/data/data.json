@@ -1,8 +1,8 @@
 {
   "meta": {
-    "title": "game",
+    "title": "boilerplate-game-1",
     "menuBackground": "menuBg",
-    "menuMusic": null,
+    "menuMusic": "music",
     "about": "game boilerplate desu."
   },
   "playerData": {
@@ -47,6 +47,10 @@
               "arguments": [
                 ["what a magnificent place", "the <<TREES>>(?) are so majestic"]
               ]
+            },
+            {
+              "name": "playMusic",
+              "arguments": ["music1", true]
             }
           ]
         },

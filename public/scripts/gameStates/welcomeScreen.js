@@ -28,10 +28,10 @@ export default class WelcomeScreen extends GameState {
     this.playMenuMusic();
   }
   playMenuMusic() {
-    // this.sound.playMusic(
-    //   this.content.getAssetByName(this.content.data.meta.menuMusic),
-    //   true
-    // );
+    this.sound.playMusic(
+      this.content.getAssetByName(this.content.data.meta.menuMusic),
+      true
+    );
   }
 
   addBackgroundImage() {

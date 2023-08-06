@@ -179,6 +179,9 @@ export default class ContentManager {
     Debug.log("loading all assets triggered: " + this.loadingAllTriggered);
   }
   getAssetByName(assetName) {
+    if (assetName == null) {
+      return null;
+    }
     if (!isDefined(this[assetName])) {
       throw new Error(`asset <<${assetName}>> has not been defined`);
     }

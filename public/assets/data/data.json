@@ -58,11 +58,23 @@
           "name": "goto_map2",
           "posX": 4,
           "posY": 9,
-          "sprite": null,
+          "sprite": "2",
           "actions": [
             {
               "name": "movePlayer",
               "arguments": [4, 0, 1]
+            }
+          ]
+        },
+        {
+          "name": "froog",
+          "posX": 7,
+          "posY": 7,
+          "sprite": "frog",
+          "actions": [
+            {
+              "name": "playDialogue",
+              "arguments": [["froog: <<i'm a froog>>", "yep"]]
             }
           ]
         }
@@ -98,6 +110,18 @@
                   "can't tell if im in hell or heaven"
                 ]
               ]
+            }
+          ]
+        },
+        {
+          "name": "goto_map1",
+          "posX": 4,
+          "posY": 0,
+          "sprite": "2",
+          "actions": [
+            {
+              "name": "movePlayer",
+              "arguments": [4, 9, 0]
             }
           ]
         }

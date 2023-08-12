@@ -73,7 +73,7 @@ export default class ContentManager {
     });
   }
   loadImages() {
-    const images = ["pc", "menuBg"];
+    const images = ["pc", "menuBg", "frog"];
 
     images.forEach((element) => {
       this.loadImage((image) => {
@@ -81,7 +81,9 @@ export default class ContentManager {
       }, `./assets/images/${element}.png`);
     });
 
-    for (let i = 0; i <= 1; i++) {
+    const tileCount = 2;
+
+    for (let i = 0; i <= tileCount; i++) {
       const url = `./assets/images/tiles/${i}.png`;
 
       this.loadImage((image) => {

@@ -224,6 +224,7 @@ export default class InputManager {
     this.downclick = false;
     this.leftclick = false;
     this.rightclick = false;
+    this.enterclick = false;
   }
   cacheKeysDown() {
     this.previousKeysDown = cloneArray(this.keysDown);

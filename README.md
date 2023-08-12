@@ -31,7 +31,7 @@ to update music files its the same stuck, but put the files in `public/assets/mu
 const tracks = ["music", "music1"];
 ```
 
-to add new tiles, you have to add images to `public/images/tiles` with filenames being consecutive numbers (so yes `0.png`, `1.png`, `2.png` you dummy <3)
+to add new tiles for maps, you have to add images to `public/images/tiles` with filenames being consecutive numbers (so yes `0.png`, `1.png`, `2.png` you dummy <3)
 
 no support for tilesets right now what were you thinking
 

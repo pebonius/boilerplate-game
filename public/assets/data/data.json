@@ -74,7 +74,7 @@
           "actions": [
             {
               "name": "playDialogue",
-              "arguments": [["froog: <<i'm a froog>>", "yep"]]
+              "arguments": [["froog: <<i'm a froog>>"]]
             }
           ]
         }

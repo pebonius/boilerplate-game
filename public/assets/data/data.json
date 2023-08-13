@@ -45,12 +45,17 @@
             {
               "name": "playDialogue",
               "arguments": [
-                ["what a magnificent place", "the <<TREES>>(?) are so majestic"]
+                [
+                  {
+                    "text": "what a magnificent place",
+                    "action": {
+                      "name": "playMusic",
+                      "arguments": ["music1", true]
+                    }
+                  },
+                  { "text": "the <<TREES>>(?) are so majestic" }
+                ]
               ]
-            },
-            {
-              "name": "playMusic",
-              "arguments": ["music1", true]
             }
           ]
         },
@@ -74,7 +79,19 @@
           "actions": [
             {
               "name": "playDialogue",
-              "arguments": [["froog: <<i'm a froog>>"]]
+              "arguments": [
+                [
+                  { "text": "froog: <<i'm a mighty wizard, look>>" },
+                  {
+                    "text": "*zoooooooooooooom*",
+                    "action": {
+                      "name": "movePlayer",
+                      "arguments": [7, 1, 0]
+                    }
+                  },
+                  { "text": "froog teleported you" }
+                ]
+              ]
             }
           ]
         }
@@ -106,8 +123,8 @@
               "name": "playDialogue",
               "arguments": [
                 [
-                  "is this a tree? or a tortured soul?",
-                  "can't tell if im in hell or heaven"
+                  { "text": "is this a tree? or a tortured soul?" },
+                  { "text": "can't tell if im in hell or heaven" }
                 ]
               ]
             }
